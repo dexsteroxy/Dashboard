@@ -4,6 +4,23 @@ import { GoPrimitiveDot } from "react-icons/go";
 import { IoIosMore } from "react-icons/io";
 import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import { Stacked, Pie, Button, LineChart, SparkLine } from "../components";
 import {
   earningData,
@@ -18,6 +35,7 @@ import { useStateContext } from "../contexts/ContextProvider";
 import product9 from "../data/product9.jpg";
 
 const Ecommerce = () => {
+  const { currentColor} = useStateContext();
   return (
     <div className="mt-12">
       <div className=" flex flex-wrap lg:flex-nowrap justify-center">
@@ -31,7 +49,7 @@ const Ecommerce = () => {
           <div className=" mt-6">
             <Button
               color="white"
-              bgColor="blue"
+              bgColor={currentColor}
               text="Download"
               borderRadius="10px"
               size="md"
@@ -69,7 +87,7 @@ const Ecommerce = () => {
           <div className=" flex justify-between">
             <p className=" font-semibold text-xl">Revenue Updates</p>
             <div className=" flex items-center gap-4">
-              <p className=" flex items-center gap-2 text-gray-700 font-medium hover:drop-shadow-xl">
+              <p className=" flex items-center gap-2 text-gray-700 dark:text-gray-200 font-medium hover:drop-shadow-xl">
                 <span>
                   <DropDownListComponent />
                 </span>
@@ -80,7 +98,7 @@ const Ecommerce = () => {
                 <span className=" text-green-500">
                   <DropDownListComponent />
                 </span>
-                <span>Budget</span>
+                <span cl>Budget</span>
               </p>
             </div>
           </div>
@@ -103,25 +121,25 @@ const Ecommerce = () => {
                   <span className=" text-3xl font-semibold">$24,00</span>
                 </p>
 
-                <p className=" text-gray-500 mt-1">Expense</p>
+                <p className=" text-gray-500  mt-1">Expense</p>
               </div>
 
               <div className=" mt-5">
                 <SparkLine
-                  currentColor="blue"
+                  currentColor={currentColor}
                   id="line-sparkline"
                   type="Line"
                   height="80px"
                   width="250px"
                   data={SparklineAreaData}
-                  color="blue"
+                  color={currentColor}
                 />
               </div>
 
               <div className=" mt-10">
                 <Button
                   color="white"
-                  bgColor="blue"
+                  bgColor={currentColor}
                   text="Download Report"
                   borderRadius="10px"
                 />
